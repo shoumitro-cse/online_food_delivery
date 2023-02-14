@@ -1,5 +1,5 @@
 ### System Design architecture of online food delivery service
-This is an online food delivery service architecture where will have customers that will be able to order dishes online and restaurants will be able to prepare new food, add new menu items, pictures, etc for customer delivery, and also will have a delivery boy/rider for food delivery. They will be able to get notifications of different steps of the ordering stage or status.
+This is an online food delivery service architecture where will have customers that will be able to order dishes via online and restaurants will be able to prepare new food, add new menu items, pictures, etc for customer delivery, and also will have a delivery boy/rider for food delivery. They will be able to get notifications of different steps of the ordering stage or status.
 
 
 
@@ -79,16 +79,31 @@ A sample model of er diagram of the architecture is given where have listed out 
 The choice of the database usually depends on the amount of data that is being stored, the ease of scaling, partitioning, 
 replication, and several other factors.
 
-* We are clear from the capacity estimation, the amount of data of restaurants, menu descriptions, customer/rider/restaurant user data, dasher data, etc is going to be huge, and hence, NoSQL like MongoDB is pretty much better for this service. 
+  * We are clear from the capacity estimation, the amount of data of restaurants, menu descriptions, customer/rider/restaurant user data, 
+    dasher data, etc is going to be huge, and hence, NoSQL like MongoDB is pretty much better for this service. 
+  * Bob storage cloud servers like Amazon S3, google buckets would be better choices for static storage like images, video, etc.
+  * Customer ordering is a transactional process. so, it should be Oracle/MySQL/Postgres, etc database.
 
-* Bob storage cloud servers like Amazon S3, google buckets would be better choices for static storage like images, video, etc.
 
-* Customer ordering is a transactional process. so, it should be Oracle/MySQL/Postgres, etc database.
-
-
+#### Services of the architecture
+ * Search Ecosystem
+ * Ordering Service
+ * Order Complete Service
+ * Notification Service
+ * Profile Service
+ 
+ 
 #### The complete component design with all the services will be like below:
 
 ![](https://github.com/shoumitro-cse/online_food_delivery/blob/main/diagram/system_design.drawio.png)
+
+
+### Others tools for faster content delivery would be a better choice.
+ * Data Partitioning
+ * Replication & Fault Tolerance
+ * Caching
+ * Load Balancing
+ * Message broker
  
 
 
