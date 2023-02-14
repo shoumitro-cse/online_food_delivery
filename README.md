@@ -1,6 +1,5 @@
 ### System Design architecture of online food delivery service
-
-
+This is an online food delivery service architecture where will have customers that will be able to order dishes online and restaurants will be able to prepare new food, add new menu items, pictures, etc for customer delivery, and also will have a delivery boy/rider for food delivery. They will be able to get notifications of different steps of the ordering stage or status.
 
 
 
